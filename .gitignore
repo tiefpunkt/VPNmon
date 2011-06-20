@@ -1,4 +1,3 @@
-lib/vendor
 cache/*
 log/*
 web/sf

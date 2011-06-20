@@ -42,6 +42,7 @@ EOF;
 	$bytes_received = getenv("bytes_received");
 	$bytes_sent = getenv("bytes_sent");
 	$instance = getenv("config");
+	$email = getenv("X509_0_emailAddress");
 	
 	$session = new VPNSession();
 	$session->setIp($ip);
@@ -57,6 +58,7 @@ EOF;
 	if (!$certificate) {
 	  $certificate = new Certificate();
 	  $certificate->setCname($cname);
+	  $certificate->setEmail($email);
 	  $certificate->save();
 	}
 	
