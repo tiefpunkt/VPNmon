@@ -1,4 +1,4 @@
 lib/vendor
-cache/
-log/
+cache/*
+log/*
 web/sf

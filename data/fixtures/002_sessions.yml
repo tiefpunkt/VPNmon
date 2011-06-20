@@ -1,0 +1,11 @@
+VPNSession:
+  01:
+    certificate_id: 1
+    duration: 1800
+    bytes_sent: 1024
+    bytes_received: 2048
+  02:
+    certificate_id: 1
+    duration: 123
+    bytes_sent: 1424
+    bytes_received: 2248

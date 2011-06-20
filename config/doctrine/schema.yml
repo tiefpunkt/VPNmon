@@ -1,0 +1,29 @@
+VPNSession:
+  actAs: [Timestampable]
+  tableName: vpn_session
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    certificate_id: integer
+    ip: string(40)
+    port: integer
+    time_start: timestamp
+    duration: integer
+    bytes_received: integer
+    bytes_sent: integer
+    instance: string(255)
+  relations:
+    Certificate:
+      foreignAlias: VPNSessions
+
+Certificate:
+  tableName: certificate
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    cname: string(255)
+    email: string(255)

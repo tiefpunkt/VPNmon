@@ -5,6 +5,9 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn:      mysql:host=localhost;dbname=VPNmon
-      username: root
-      password: 
+      dsn: sqlite:%SF_DATA_DIR%/database.db
+
+dev:
+  doctrine:
+    param:
+      dsn: sqlite:%SF_DATA_DIR%/dev.db
