@@ -3,6 +3,7 @@
 
 # default values
 all:
+  version: v0.1 [Alpha]
   .array:
     instances:
       UDP:

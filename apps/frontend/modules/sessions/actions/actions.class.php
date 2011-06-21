@@ -4,10 +4,10 @@
  * monitor actions.
  *
  * @package    VPNmon
- * @subpackage monitor
+ * @subpackage sessions
  * @author     Severin Schols <severin@schols.de>
  */
-class monitorActions extends sfActions
+class sessionsActions extends sfActions
 {
 
  /**

@@ -1,1 +1,1 @@
-Powered by VPNmon v0.1 (Alpha)
+Powered by VPNmon <?php echo sfConfig::get('app_version'); ?>
