@@ -22,10 +22,13 @@
 					</div>
 				<?php endif; ?>
 				<div class="slot"><?php include_partial('global/menu') ?></div>
-				<div class="slot"><?php include_partial('global/bookmarks') ?></div>
+				<!--<div class="slot"><?php include_partial('global/bookmarks') ?></div>-->
 			</div>
 			<div id="main">
 				<?php echo $sf_content ?>
+			</div>
+			<div id="footer">
+				<?php include_partial('global/footer') ?>
 			</div>
 		</div>
 	</body>
