@@ -30,9 +30,4 @@ class monitorActions extends sfActions
 	
 	$this->connections = $connections;
   }
-  
-  public function executeCertificates(sfWebRequest $request)
-  {
-    $this->certificates = Doctrine_Core::getTable('Certificate')->createQuery()->execute();	
-  }
 }
