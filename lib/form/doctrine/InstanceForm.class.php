@@ -12,5 +12,8 @@ class InstanceForm extends BaseInstanceForm
 {
   public function configure()
   {
+	  parent::setUp();
+	  unset($this['created_at'],$this['updated_at']);
+          // rest of your form logic
   }
 }
