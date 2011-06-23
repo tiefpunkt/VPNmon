@@ -21,7 +21,7 @@
  * 
  * @package    VPNmon
  * @subpackage model
- * @author     Your name here
+ * @author     Severin Schols <severin@schols.de>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseCertificate extends sfDoctrineRecord
@@ -50,5 +50,9 @@ abstract class BaseCertificate extends sfDoctrineRecord
         $this->hasMany('VPNSession as VPNSessions', array(
              'local' => 'id',
              'foreign' => 'certificate_id'));
+
+        $timestampable0 = new Doctrine_Template_Timestampable(array(
+             ));
+        $this->actAs($timestampable0);
     }
 }

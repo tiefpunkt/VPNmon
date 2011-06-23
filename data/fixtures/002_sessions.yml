@@ -4,8 +4,10 @@ VPNSession:
     duration: 1800
     bytes_sent: 1024
     bytes_received: 2048
+    instance_id: 1
   02:
     certificate_id: 1
     duration: 123
     bytes_sent: 1424
     bytes_received: 2248
+    instance_id: 2

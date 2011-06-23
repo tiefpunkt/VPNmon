@@ -13,8 +13,9 @@
  * @property integer $duration
  * @property integer $bytes_received
  * @property integer $bytes_sent
- * @property string $instance
+ * @property integer $instance_id
  * @property Certificate $Certificate
+ * @property Instance $Instance
  * 
  * @method integer     getId()             Returns the current record's "id" value
  * @method integer     getCertificateId()  Returns the current record's "certificate_id" value
@@ -24,8 +25,9 @@
  * @method integer     getDuration()       Returns the current record's "duration" value
  * @method integer     getBytesReceived()  Returns the current record's "bytes_received" value
  * @method integer     getBytesSent()      Returns the current record's "bytes_sent" value
- * @method string      getInstance()       Returns the current record's "instance" value
+ * @method integer     getInstanceId()     Returns the current record's "instance_id" value
  * @method Certificate getCertificate()    Returns the current record's "Certificate" value
+ * @method Instance    getInstance()       Returns the current record's "Instance" value
  * @method VPNSession  setId()             Sets the current record's "id" value
  * @method VPNSession  setCertificateId()  Sets the current record's "certificate_id" value
  * @method VPNSession  setIp()             Sets the current record's "ip" value
@@ -34,12 +36,13 @@
  * @method VPNSession  setDuration()       Sets the current record's "duration" value
  * @method VPNSession  setBytesReceived()  Sets the current record's "bytes_received" value
  * @method VPNSession  setBytesSent()      Sets the current record's "bytes_sent" value
- * @method VPNSession  setInstance()       Sets the current record's "instance" value
+ * @method VPNSession  setInstanceId()     Sets the current record's "instance_id" value
  * @method VPNSession  setCertificate()    Sets the current record's "Certificate" value
+ * @method VPNSession  setInstance()       Sets the current record's "Instance" value
  * 
  * @package    VPNmon
  * @subpackage model
- * @author     Your name here
+ * @author     Severin Schols <severin@schols.de>
  * @version    SVN: $Id: Builder.php 7490 2010-03-29 19:53:27Z jwage $
  */
 abstract class BaseVPNSession extends sfDoctrineRecord
@@ -74,9 +77,8 @@ abstract class BaseVPNSession extends sfDoctrineRecord
         $this->hasColumn('bytes_sent', 'integer', null, array(
              'type' => 'integer',
              ));
-        $this->hasColumn('instance', 'string', 255, array(
-             'type' => 'string',
-             'length' => 255,
+        $this->hasColumn('instance_id', 'integer', null, array(
+             'type' => 'integer',
              ));
     }
 
@@ -85,6 +87,10 @@ abstract class BaseVPNSession extends sfDoctrineRecord
         parent::setUp();
         $this->hasOne('Certificate', array(
              'local' => 'certificate_id',
+             'foreign' => 'id'));
+
+        $this->hasOne('Instance', array(
+             'local' => 'instance_id',
              'foreign' => 'id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable(array(

@@ -4,21 +4,3 @@
 # default values
 all:
   version: v0.1 [Alpha]
-  .array:
-    instances:
-      UDP:
-        name: UDP
-        status: /var/run/openvpn.thearrow-udp.status
-        config: /etc/openvpn/thearrow-udp.conf
-      TCP:
-        name: TCP
-        status: /var/run/openvpn.thearrow-tcp.status
-        config: /etc/openvpn/thearrow-tcp.conf  
-
-dev:
-  .array:
-    instances:
-      UDP:
-        status: C:\Users\severin\Development\vpnmon\data\demo\openvpn.thearrow-udp.status
-      TCP:
-        status: C:\Users\severin\Development\vpnmon\data\demo\openvpn.thearrow-tcp.status

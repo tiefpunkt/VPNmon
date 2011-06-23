@@ -18,10 +18,10 @@ class sessionsActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
     $connections = array();
-    $instances = sfConfig::get('app_instances');
+    $instances = Doctrine_Core::getTable('Instance')->createQuery()->execute();;
     
 	foreach($instances as $instance) {
-	  $temp = openVpnStatusParser::parseLog($instance["status"], $instance["name"]);
+	  $temp = openVpnStatusParser::parseLog($instance->getStatusFile(), $instance->getName());
 	  if (isset($temp["users"])) {
         $temp2 = $connections;
         $connections = array_merge($temp2, $temp["users"]);

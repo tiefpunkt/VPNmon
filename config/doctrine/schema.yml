@@ -13,12 +13,15 @@ VPNSession:
     duration: integer
     bytes_received: integer
     bytes_sent: integer
-    instance: string(255)
+    instance_id: integer
   relations:
     Certificate:
       foreignAlias: VPNSessions
+    Instance:
+      foreignAlias: VPNSessions
 
 Certificate:
+  actAs: [Timestampable]
   tableName: certificate
   columns:
     id:
@@ -27,3 +30,15 @@ Certificate:
       autoincrement: true
     cname: string(255)
     email: string(255)
+
+Instance:
+  actAs: [Timestampable]
+  tableName: instance
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    name: string(50)
+    config_file: string(255)
+    status_file: string(255)

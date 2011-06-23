@@ -7,7 +7,7 @@
  *
  * @package    VPNmon
  * @subpackage form
- * @author     Your name here
+ * @author     Severin Schols <severin@schols.de>
  * @version    SVN: $Id: sfDoctrineFormGeneratedTemplate.php 29553 2010-05-20 14:33:00Z Kris.Wallsmith $
  */
 abstract class BaseVPNSessionForm extends BaseFormDoctrine
@@ -23,7 +23,7 @@ abstract class BaseVPNSessionForm extends BaseFormDoctrine
       'duration'       => new sfWidgetFormInputText(),
       'bytes_received' => new sfWidgetFormInputText(),
       'bytes_sent'     => new sfWidgetFormInputText(),
-      'instance'       => new sfWidgetFormInputText(),
+      'instance_id'    => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Instance'), 'add_empty' => true)),
       'created_at'     => new sfWidgetFormDateTime(),
       'updated_at'     => new sfWidgetFormDateTime(),
     ));
@@ -37,7 +37,7 @@ abstract class BaseVPNSessionForm extends BaseFormDoctrine
       'duration'       => new sfValidatorInteger(array('required' => false)),
       'bytes_received' => new sfValidatorInteger(array('required' => false)),
       'bytes_sent'     => new sfValidatorInteger(array('required' => false)),
-      'instance'       => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'instance_id'    => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Instance'), 'required' => false)),
       'created_at'     => new sfValidatorDateTime(),
       'updated_at'     => new sfValidatorDateTime(),
     ));

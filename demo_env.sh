@@ -5,3 +5,5 @@ export time_unix=1308543605
 export time_duration=5627
 export bytes_received=66789
 export bytes_sent=996676
+export X509_0_emailAddress="otto@example.com"
+export config="/etc/openvpn/thearrow-tcp.conf"

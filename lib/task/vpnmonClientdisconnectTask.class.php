@@ -41,7 +41,7 @@ EOF;
 	$duration = getenv("time_duration");
 	$bytes_received = getenv("bytes_received");
 	$bytes_sent = getenv("bytes_sent");
-	$instance = getenv("config");
+	$config = getenv("config");
 	$email = getenv("X509_0_emailAddress");
 	
 	$session = new VPNSession();
@@ -51,7 +51,6 @@ EOF;
 	$session->setBytesReceived($bytes_received);
 	$session->setBytesSent($bytes_sent);
 	$session->setTimeStart($date);
-	$session->SetInstamce($instance);
 	
 	$query = Doctrine_Core::getTable('Certificate')->createQuery('c')->where('c.cname = ?', $cname)->limit(1);
 	$certificate = $query->fetchOne();
@@ -62,7 +61,18 @@ EOF;
 	  $certificate->save();
 	}
 	
+	$query = Doctrine_Core::getTable('Instance')->createQuery('i')->where('i.config_file = ?', $config)->limit(1);
+	$instance = $query->fetchOne();
+	if (!$instance) {
+	  $instance = new Instance();
+	  $instance->setConfigFile($config);
+	  $instance->setName("Unkown");
+	  $instance->save();
+	}
+	
+	
 	$session->setCertificate($certificate);
+	$session->setInstance($instance);
 	$session->save();
   }
 }
