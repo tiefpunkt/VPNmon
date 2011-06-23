@@ -1,4 +1,4 @@
-<h2>Current VPN Sessions</h2>
+<h1>Current VPN Sessions</h1>
 <table>
   <tr class="header"><td>Name</td><td>Real Address</td><td>Virtual Address</td><td>Since</td><td>Bytes Sent</td><td>Bytes Received</td><td>Proto</td></tr>
   <?php foreach ($connections as $connection) { ?>

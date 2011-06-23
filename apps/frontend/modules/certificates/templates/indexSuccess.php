@@ -1,4 +1,4 @@
-<h2>Certificates</h2>
+<h1>Certificates</h1>
 <table>
   <tr class="header"><td>Common Name</td><td>eMail</td><td>Total Duration</td><td>Bytes Sent</td><td>Bytes Received</td></tr>
   <?php foreach ($certificates as $certificate) { ?>

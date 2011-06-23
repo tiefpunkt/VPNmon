@@ -1,0 +1,25 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Instance
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              Instance
+    plural:                Instances
+    route_prefix:          instance
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css: /sf/sf_admin/css/main.css
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        display: [name]
+      filter:
+        class: false
+      form:
+        display: [name, config_file, status_file]
+      edit: ~        
+      new: ~
