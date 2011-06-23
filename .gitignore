@@ -1,3 +1,8 @@
 cache/*
 log/*
 web/sf
+config/databases.yml
+data/fixtures/*
+!data/fixtures/fixtures.yml
+data/*.db
+data/demo
