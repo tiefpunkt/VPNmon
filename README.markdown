@@ -17,7 +17,6 @@ VPNmon is a monitoring solution for OpenVPN VPN tunnels. It is build using the s
      `status <path>`
     * Client disconnect script  
       VPNmon gets notifications and data about tunnel usage, certificates etc. from the client disconnect script. Add the following lines to your configuration:  
-      `script-security 2   
-	  
-      client-disconnect <path to VPNmon>/bin/client-disconnect.sh  	  `
+      `script-security 2`  
+	  `client-disconnect <path to VPNmon>/bin/client-disconnect.sh  	  `
 6.  Point your webservers root directory to VPNmon's web directory
