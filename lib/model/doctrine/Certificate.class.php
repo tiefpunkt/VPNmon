@@ -19,7 +19,7 @@ class Certificate extends BaseCertificate
 			$duration += $session->getDuration();
 		}
 		
-		return $duration;
+		return Formatter::secondsFormat($duration);
 	}
 	
 	public function getTotalBytesReceived() {
@@ -29,7 +29,7 @@ class Certificate extends BaseCertificate
 			$bytes += $session->getBytesReceived();
 		}
 		
-		return $bytes;
+		return Formatter::bytesFormat($bytes);
 	}
 
 	public function getTotalBytesSent() {
@@ -39,6 +39,6 @@ class Certificate extends BaseCertificate
 			$bytes += $session->getBytesSent();
 		}
 		
-		return $bytes;
+		return Formatter::bytesFormat($bytes);
 	}
 }
