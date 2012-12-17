@@ -20,3 +20,6 @@ VPNmon is a monitoring solution for OpenVPN VPN tunnels. It is build using the s
       `script-security 2`  
 	  `client-disconnect <path to VPNmon>/bin/client-disconnect.sh  	  `
 6.  Point your webservers root directory to VPNmon's web directory
+
+## License
+Licensed under MIT license. See LICENSE for details.
